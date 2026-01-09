@@ -4,6 +4,7 @@ metadata:
   name: ekart-app
 spec:
   replicas: 2
+  progressDeadlineSeconds: 900
   selector:
     matchLabels:
       app: ekart
@@ -15,5 +16,6 @@ spec:
       containers:
         - name: ekart
           image: <+artifact.image>
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
