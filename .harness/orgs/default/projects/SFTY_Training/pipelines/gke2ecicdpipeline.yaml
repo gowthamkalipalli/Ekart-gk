@@ -20,7 +20,7 @@ pipeline:
         spec:
           cloneCodebase: true
           caching:
-            enabled: false
+            enabled: true
             override: false
             paths: []
           platform:
@@ -53,7 +53,7 @@ pipeline:
                     tags:
                       - latest
           buildIntelligence:
-            enabled: false
+            enabled: true
     - stage:
         name: CD
         identifier: CD
