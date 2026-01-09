@@ -72,9 +72,6 @@ pipeline:
                       domain: http://34.28.80.104:9000
                       ssl: true
                     tool:
-                      java:
-                        libraries: target/*.jar
-                        binaries: target/classes
                       project_key: ekart-sonar
                   timeout: 10m
           buildIntelligence:
