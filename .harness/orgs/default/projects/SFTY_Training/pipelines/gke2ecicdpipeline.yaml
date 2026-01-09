@@ -20,8 +20,9 @@ pipeline:
         spec:
           cloneCodebase: true
           caching:
-            enabled: true
+            enabled: false
             override: false
+            paths: []
           platform:
             os: Linux
             arch: Amd64
@@ -51,6 +52,8 @@ pipeline:
                     imageName: ekart-repo/ekart
                     tags:
                       - latest
+          buildIntelligence:
+            enabled: false
     - stage:
         name: CD
         identifier: CD
