@@ -1,0 +1,25 @@
+service:
+  name: gksvcnew
+  identifier: gksvcnew
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: glmanifest
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: gkconnect
+                  gitFetchType: Branch
+                  paths:
+                    - k8s/
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              optionalValuesYaml: false
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: SFTY_Training
