@@ -80,13 +80,13 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Rollout Deployment
-                  identifier: rolloutDeployment
                   type: K8sRollingDeploy
-                  timeout: 10m
+                  name: K8sRollingDeploy_2
+                  identifier: K8sRollingDeploy_2
                   spec:
                     skipDryRun: false
                     pruningEnabled: false
+                  timeout: 10m
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
