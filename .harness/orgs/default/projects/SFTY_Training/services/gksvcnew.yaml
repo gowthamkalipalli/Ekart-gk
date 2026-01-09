@@ -32,8 +32,7 @@ service:
                 region: us-central1
                 repositoryName: ekart-repo/ekart
                 package: ekart
-                version: |
-                  <+pipeline.stages.ci.execution.steps.BuildAndPushGAR_1.output.imageTag>
+                version: latest
                 digest: ""
               type: GoogleArtifactRegistry
   gitOpsEnabled: false
