@@ -52,6 +52,28 @@ pipeline:
                     imageName: ekart-repo/ekart
                     tags:
                       - latest
+              - step:
+                  type: Sonarqube
+                  name: Sonarqube_1
+                  identifier: Sonarqube_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                    auth:
+                      access_token: squ_1f09794e1fdce12d294e5f27054fc110fb9d4a04
+                      domain: http://34.28.80.104:9000
+                      ssl: true
+                    tool:
+                      java:
+                        libraries: target/*.jar
+                        binaries: target/classes
+                      project_key: ekart-sonar
           buildIntelligence:
             enabled: true
     - stage:
