@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ekart
-          image: <+artifact.image>
+          image: us-central1-docker.pkg.dev/gkalipalli1/ekart-repo/ekart:latest ##<+artifact.image>
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
