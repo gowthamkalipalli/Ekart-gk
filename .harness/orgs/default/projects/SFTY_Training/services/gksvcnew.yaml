@@ -30,7 +30,7 @@ service:
                 repositoryType: docker
                 project: gkalipalli1
                 region: us-central1
-                repositoryName: ekart-repo/ekart
+                repositoryName: ekart-repo
                 package: ekart
                 version: latest
                 digest: ""
