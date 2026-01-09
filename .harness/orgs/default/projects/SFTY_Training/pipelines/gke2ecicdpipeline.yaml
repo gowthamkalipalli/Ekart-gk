@@ -50,7 +50,7 @@ pipeline:
                     projectID: gkalipalli1
                     imageName: ekart-repo/ekart
                     tags:
-                      - <+pipeline.sequenceId>
+                      - latest
     - stage:
         name: CD
         identifier: CD
