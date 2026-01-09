@@ -33,6 +33,13 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: mvn clean package -DskipTests
+              - step:
                   type: BuildAndPushGAR
                   name: BuildAndPushGAR_1
                   identifier: BuildAndPushGAR_1
