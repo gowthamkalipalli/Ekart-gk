@@ -1,0 +1,45 @@
+pipeline:
+  name: gk-e2e-cicd-pipeline
+  identifier: gke2ecicdpipeline
+  projectIdentifier: SFTY_Training
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gkalipallinewgitconnector
+        repoName: Ekart-gk
+        build: <+input>
+  stages:
+    - stage:
+        name: CI
+        identifier: CI
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec:
+              size: flex
+              imageSpec:
+                imageName: ubuntu-24
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushGAR
+                  name: BuildAndPushGAR_1
+                  identifier: BuildAndPushGAR_1
+                  spec:
+                    connectorRef: gkgcpconnectorv2latest
+                    host: us-central1-docker.pkg.dev
+                    projectID: gkalipalli1
+                    imageName: ekart-repo/ekart
+                    tags:
+                      - <+pipeline.sequenceId>
